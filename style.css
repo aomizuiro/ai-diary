@@ -86,13 +86,6 @@ header {
     margin-bottom: 0;
 }
 
-.sub-desc {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 0.3rem;
-}
-
 .icon-btn {
     position: absolute;
     right: 0;
@@ -602,4 +595,5 @@ body .history-list .history-item .history-reply {
   overflow-wrap: anywhere !important; /* 長文折り返し */
   word-break: break-word !important;
 }
+
 
