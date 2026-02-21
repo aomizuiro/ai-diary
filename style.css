@@ -578,3 +578,20 @@ textarea:focus {
     -webkit-box-orient: initial !important;
   }
 }
+
+/* これで .history-reply の3行省略を確実に解除する */
+body .history-list .history-item .history-reply {
+  display: block !important;          /* -webkit-box を潰す */
+  -webkit-box-orient: initial !important;
+  -webkit-line-clamp: initial !important;
+  line-clamp: initial !important;
+
+  overflow: visible !important;       /* hidden を潰す */
+  max-height: none !important;
+  height: auto !important;
+
+  text-overflow: clip !important;     /* … を潰す */
+  white-space: pre-wrap !important;   /* 改行保持 */
+  overflow-wrap: anywhere !important; /* 長文折り返し */
+  word-break: break-word !important;
+}
