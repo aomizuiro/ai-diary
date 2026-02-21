@@ -556,3 +556,25 @@ textarea:focus {
   overflow: visible !important;
 }
 
+/* スマホで履歴の返信が見切れないように（強制上書き） */
+@media (max-width: 600px) {
+  .history-item,
+  .history-content,
+  .history-reply {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .history-reply {
+    display: block !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+
+    /* line-clamp系を完全に無効化 */
+    -webkit-line-clamp: initial !important;
+    line-clamp: initial !important;
+    -webkit-box-orient: initial !important;
+  }
+}
