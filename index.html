@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diary</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-top">
+                <h1>AI Diary</h1>
+                <button id="settings-btn" class="icon-btn" title="API設定">⚙️</button>
+            </div>
+            <p>AIがあなたの日記に反応します</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <textarea id="diary-input" placeholder="今日のできごとや、考えていることを書いてみましょう..."></textarea>
+                <div class="controls">
+                    <span class="char-count" id="char-count">0 文字</span>
+                    <button id="generate-btn" class="primary-btn">送信してAIの反応を見る</button>
+                </div>
+            </section>
+
+            <section class="result-section" id="result-section" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h2>AIからの返信</h2>
+                        <span class="emotion-badge" id="emotion-badge">分析中...</span>
+                    </div>
+                    <div class="skeleton-loader" id="loading-indicator">
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                    <div id="error-message" class="error-message" style="display: none;"></div>
+                    <p id="ai-reply" class="reply-text" style="display: none;"></p>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <div class="history-header">
+                    <h2>過去の日記</h2>
+                    <button id="clear-history-btn" class="text-btn">履歴をクリア</button>
+                </div>
+                <div class="history-list" id="history-list">
+                    <!-- 履歴アイテムがここに追加されます -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- APIキー設定モーダル -->
+    <div id="api-key-modal" class="modal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <h2>Gemini APIキーの設定</h2>
+            <p class="modal-desc">
+                AI返信機能を使用するには、ご自身のGemini APIキーが必要です。<br>
+                ※キーはお使いのブラウザ内（localStorage）にのみ保存され、サーバーへは送信されません。
+            </p>
+            <div class="api-guide">
+                <p><strong>💡 APIキーの取得方法:</strong></p>
+                <ol>
+                    <li><a href="https://aistudio.google.com/app/apikey" target="_blank"
+                            rel="noopener noreferrer">Google AI Studio</a>にアクセスしてログインします。</li>
+                    <li>「Create API key」ボタンを押し、プロジェクトを作成または選択してキーを発行します。</li>
+                    <li>生成された「AIzaSy...」から始まる文字をコピーしてください。</li>
+                </ol>
+            </div>
+            <div class="form-group">
+                <label for="api-key-input">APIキー:</label>
+                <input type="password" id="api-key-input" placeholder="AIzaSy...">
+            </div>
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="secondary-btn">キャンセル</button>
+                <button id="modal-delete-btn" class="danger-btn">キーを削除</button>
+                <button id="modal-save-btn" class="primary-btn">保存して有効化</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
