@@ -357,10 +357,8 @@ textarea:focus {
 .history-content {
     font-size: 0.95rem;
     margin-bottom: 0.75rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: block;
+    overflow: visible;
 }
 
 .history-reply {
@@ -369,10 +367,8 @@ textarea:focus {
     background: #f8fafc;
     padding: 0.75rem;
     border-radius: 8px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: block;
+    overflow: visible;
 }
 
 /* Modal */
@@ -559,3 +555,4 @@ textarea:focus {
   -webkit-box-orient: unset !important;
   overflow: visible !important;
 }
+
