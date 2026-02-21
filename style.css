@@ -550,3 +550,12 @@ textarea:focus {
   word-break: break-word;
   overflow-wrap: anywhere;
 }
+
+/* 履歴の省略を解除（全文表示） */
+.history-content,
+.history-reply {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  overflow: visible !important;
+}
