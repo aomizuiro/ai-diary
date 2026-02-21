@@ -538,4 +538,15 @@ textarea:focus {
         opacity: 1;
         transform: translateY(0);
     }
+
+}
+
+/* スマホで返信が見切れないように */
+.result-card,
+.reply-text {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
